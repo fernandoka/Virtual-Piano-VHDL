@@ -1,0 +1,93 @@
+#####################################################################
+##
+##  Fichero:
+##    Teclado.ucf  15/7/2015
+##
+##    Fernando Candelario
+##	  Dise帽o Autom谩tico de Sistemas
+##    Facultad de Inform谩tica. Universidad Complutense de Madrid
+##
+##  Prop贸sito:
+##    Configuraci贸n proyecto 
+##
+##  Notas de dise帽o:
+##		The board used in this proyect is "XESS XSA-3S"
+##		The fpga used is XC3S1000.
+##
+##	
+#####################################################################
+#
+# Reloj del sistema: CLKB a 50 MHz
+#
+NET osc LOC=P8;
+NET osc TNM_NET = osc;
+TIMESPEC TSosc=PERIOD osc 20 ns HIGH 50%;
+
+#
+# Reset del sistema: PB-izq de la XSA-3S Board
+#
+NET rstPb_n LOC=E11;     # PB-izq
+
+#
+# Localizaci贸n del conector PS/2 de la XSA-3S Board
+#
+NET ps2Clk  LOC=B16;   # CLK
+NET ps2Data LOC=E13;   # DATA
+
+#
+# Localizaci贸n del conector VGA de la XSA-3S Board
+#
+NET hSync  LOC=B7;     # HSYNC
+NET vSync  LOC=D8;     # VSYNC
+net RGB<8> LOC=B1;     # RED2
+net RGB<7> LOC=D6;     # RED1
+net RGB<6> LOC=C8;     # RED0
+net RGB<5> LOC=C3;     # GREEN2
+net RGB<4> LOC=A5;     # GREEN1
+net RGB<3> LOC=A8;     # GREEN0
+net RGB<2> LOC=D5;     # BLUE2
+net RGB<1> LOC=E7;     # BLUE1
+net RGB<0> LOC=C9;     # BLUE0
+# Localizaci髇 del interfaz IIS de la XStend Board
+#
+NET mclk LOC=P11;     # MCLK 
+NET sclk LOC=T12;     # SCLK 
+NET lrck LOC=R12;     # LRCK 
+NET sdti LOC=M10;     # SDTI 
+NET sdto LOC=K5;      # SDTO 
+#
+# Localizaci髇 de la barra de leds de la XStend Board
+#
+NET leds<0> LOC=L5;     # BARLED-1
+NET leds<1> LOC=N2;     # BARLED-2
+NET leds<2> LOC=M3;     # BARLED-3
+NET leds<3> LOC=N1;     # BARLED-4
+NET leds<4> LOC=T13;    # BARLED-5
+NET leds<5> LOC=L15;    # BARLED-6
+NET leds<6> LOC=J13;    # BARLED-7
+NET leds<7> LOC=H15;    # BARLED-8
+
+#
+# Localizaci髇 del display 7-segmentos izquierdo de la XStend Board
+# 
+NET leftSegs<7> LOC=N15;    # LED1-DP 
+NET leftSegs<6> LOC=H14;    # LED1-A 
+NET leftSegs<5> LOC=M4;     # LED1-B 
+NET leftSegs<4> LOC=P1;     # LED1-C 
+NET leftSegs<3> LOC=N3;     # LED1-D 
+NET leftSegs<2> LOC=M15;    # LED1-E 
+NET leftSegs<1> LOC=H13;    # LED1-F 
+NET leftSegs<0> LOC=G16;    # LED1-G
+
+#
+# Localizaci髇 del display 7-segmentos derecho de la XStend Board
+#
+NET rightSegs<7> LOC=H4;     # LED2-DP 
+NET rightSegs<6> LOC=E2;     # LED2-A 
+NET rightSegs<5> LOC=E1;     # LED2-B 
+NET rightSegs<4> LOC=F3;     # LED2-C 
+NET rightSegs<3> LOC=F2;     # LED2-D   
+NET rightSegs<2> LOC=G4;     # LED2-E 
+NET rightSegs<1> LOC=G3;     # LED2-F 
+NET rightSegs<0> LOC=G1;     # LED2-G 
+
